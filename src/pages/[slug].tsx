@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation'
 
 export const getServerSideProps = async ({ params }: any) => {
     const page = await getPageBySlug(params.slug)
-    const navigationItems = await getNavigationItemsByMenuSlug('header-menu')
+    const navigationItems = await getNavigationItemsByMenuSlug('footer-menu')
     return { props: { page, navigationItems } }
 }
 
