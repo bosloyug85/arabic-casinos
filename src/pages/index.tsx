@@ -11,7 +11,6 @@ const HomePage = () => {
             />
             <Hero title="Another Best Arabic Casinos Online">
                 <p>dasdas</p>
-                <d>dasdasdsa</d>
             </Hero>
             <List />
         </div>

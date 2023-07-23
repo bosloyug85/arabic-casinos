@@ -33,26 +33,10 @@ const Hero = (props: HeroProps) => {
         >
             <div style={{ width: '50%' }}>
                 <h1>{title}</h1>
-                {children && children}
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis ultrices posuere felis, eu efficitur eros dapibus a.
-                    Nunc rutrum fringilla metus, id aliquam neque dignissim sit
-                    amet. Suspendisse tincidunt, mauris in volutpat commodo,
-                    nulla tellus congue tortor, vel tempus libero justo in justo
-                    tincidunt, mauris in volutpat commodo.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis ultrices posuere felis, eu efficitur eros dapibus a.
-                    Nunc rutrum fringilla metus, id aliquam neque dignissim sit
-                    amet. Suspendisse tincidunt, mauris in volutpat commodo,
-                    nulla tellus congue tortor, vel tempus libero justo in justo
-                    tincidunt, mauris in volutpat commodo.
-                </p>
+                <p>{description}</p>
             </div>
             <div style={{ width: '50%' }}>
-                <img style={{ width: '100%' }} src="/images/hero-image.png" />
+                <img style={{ width: '100%' }} src={backgroundImage} />
             </div>
         </div>
     )
