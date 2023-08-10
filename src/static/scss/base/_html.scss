@@ -1,0 +1,55 @@
+html {
+    font-family: $regular-font;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: $font-weight-base;
+    color: $body-color;
+    background-color: $body-bg-color;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+
+    &.loading {
+        *,
+        *:before,
+        *:after {
+            pointer-events: none !important;
+        }
+    }
+
+    &.overflow-hidden {
+        overflow: hidden;
+    }
+}
+
+[data-anim] {
+    opacity: 0;
+}
+
+::-moz-selection {
+    background: $primary-color;
+    color: $white;
+}
+
+::selection {
+    background: $primary-color;
+    color: $white;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+}
+
+main,
+.main {
+}
+
+// RESPONSIVE
+html {
+    @include media-breakpoint-up(xxl) {
+        font-size: 0.879vw;
+    }
+}

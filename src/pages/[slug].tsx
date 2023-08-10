@@ -1,6 +1,8 @@
+import '../static/scss/main.scss'
 import { renderModules } from '@/app/helpers/utils'
 import { getNavigationItemsByMenuSlug, getPageBySlug } from '@/app/lib/api'
 import Navigation from '@/components/Navigation'
+import Card from '@/components/Card'
 
 export const getServerSideProps = async ({ params }: any) => {
     const page = await getPageBySlug(params.slug)
@@ -21,6 +23,7 @@ const Page = (props: any) => {
             <Navigation navigationItems={navigationItems} />
             <h1>{data.title.rendered}</h1>
             {renderModules(modules)}
+            <Card image="image" title="Title" description="Description" />
         </div>
     )
 }

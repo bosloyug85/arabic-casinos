@@ -1,4 +1,4 @@
-@import '../utility.scss';
+@import '../../utility';
 
 .hero {
     display: flex;
@@ -6,16 +6,10 @@
     align-items: center;
     max-width: 100%;
     width: auto;
-    background-color: $black;
-    color: $white;
 
     &__left,
     &__right {
         width: 50%;
         padding: 0 rem(50);
-
-        h1 {
-            color: $white;
-        }
     }
 }
