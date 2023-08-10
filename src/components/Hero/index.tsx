@@ -1,11 +1,10 @@
 import React from 'react'
 import '../../static/scss/components/hero.scss'
-import Example from '../Example'
 
 type HeroProps = {
     children?: JSX.Element[]
     title: string
-    description?: string
+    description: string
     backgroundImage?: string
     backgroundImageMobile?: string
     reverse: string
@@ -21,17 +20,13 @@ const Hero = (props: HeroProps) => {
         children,
     } = props
     return (
-        <div style={{}} className="hero">
-            <div className="hero__left">
-                <Example
-                    onClickHandler={() => console.log('test')}
-                    title={'testis'}
-                />
+        <div style={{ backgroundImage: backgroundImage }} className="hero">
+            <div className="hero__content">
                 <h1>{title}</h1>
-                <p>{description}</p>
-            </div>
-            <div className="hero__right">
-                <img src={backgroundImage} />
+                <div dangerouslySetInnerHTML={{ __html: description }}></div>
+                <a className="btn btn--solid" href="#">
+                    <span className="btn__text">See Top Online Casinos</span>
+                </a>
             </div>
         </div>
     )
