@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../static/scss/components/hero.scss'
+import Button from '../Button'
 
 type HeroProps = {
     children?: JSX.Element[]
@@ -20,15 +21,24 @@ const Hero = (props: HeroProps) => {
         children,
     } = props
     return (
-        <div style={{ backgroundImage: backgroundImage }} className="hero">
-            <div className="hero__content">
-                <h1>{title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: description }}></div>
-                <a className="btn btn--solid" href="#">
-                    <span className="btn__text">See Top Online Casinos</span>
-                </a>
+        <section
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+            className="hero"
+        >
+            <div className="container">
+                <div className="hero__content u-text-center">
+                    <h1 className="display-1">{title}</h1>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    ></div>
+                    <Button
+                        btnText="See Top Online Casinos"
+                        className="btn--solid"
+                        href="#"
+                    />
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 

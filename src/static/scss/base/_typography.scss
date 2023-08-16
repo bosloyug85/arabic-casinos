@@ -125,39 +125,46 @@ h6,
     line-height: 1.25;
     color: $headline-color;
     font-family: $headline-font;
+    font-weight: 600;
 }
 
 .display {
     &-1 {
         &,
         & * {
-            font-size: rem(80);
+            font-size: rem(67);
+            line-height: line-height(67, 80.4);
         }
     }
+
     &-2 {
         &,
         & * {
             font-size: rem(72);
         }
     }
+
     &-3 {
         &,
         & * {
             font-size: rem(64);
         }
     }
+
     &-4 {
         &,
         & * {
             font-size: rem(56);
         }
     }
+
     &-5 {
         &,
         & * {
             font-size: rem(48);
         }
     }
+
     &-6 {
         &,
         & * {

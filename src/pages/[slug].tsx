@@ -19,8 +19,8 @@ const Page = (props: any) => {
     let data = page[0]
     let acf = data.acf
     let modules = acf.modules
-    console.log('acf', modules)
-    console.log('navigation items ', navigationItems)
+    // console.log('acf', modules)
+    // console.log('navigation items ', navigationItems)
     return (
         <div className={plus_jakarta_sans.className}>
             <div
@@ -28,7 +28,6 @@ const Page = (props: any) => {
                 dangerouslySetInnerHTML={{ __html: data.yoast_head }}
             ></div>
             <Navigation navigationItems={navigationItems} />
-            <h1>{data.title.rendered}</h1>
             {renderModules(modules)}
         </div>
     )

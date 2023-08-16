@@ -2,20 +2,33 @@
 
 .hero {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 100%;
-    width: auto;
+    min-height: 100vh;
     background-color: $black;
     color: $white;
+    background-size: cover;
 
-    &__left,
-    &__right {
-        width: 50%;
-        padding: 0 rem(50);
+    &__content {
+        max-width: rem(1040);
+        margin: 0 auto;
+    }
 
-        h1 {
-            color: $white;
+    .display-1 {
+        padding-bottom: rem(16);
+    }
+
+    p {
+        font-size: rem(20);
+        font-weight: 600;
+        line-height: line-height(20, 30);
+        padding-bottom: rem(16);
+
+        &:empty {
+            display: none;
         }
+    }
+
+    .btn {
+        margin-top: rem(14);
     }
 }

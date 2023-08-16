@@ -1,47 +1,51 @@
-//  @var $class string
-//  @var $href string
-//  @var $buttonText string
-//  @var $icon string
-//  @var $type string
-//  @var $target string
-//  @var $dataAttr string
-//  @var $name string
+const Button = (props: any) => {
+    const { className, icon, href, target, name, dataAttr, btnText, type } =
+        props
 
-/**
- *
- class options: btn--solid, btn--outline, btn--icon
- *
-  <?php get_partial('components/button', [
-    'class' => 'btn--solid btn--primary',
-    'href' => '#',
-    'buttonText' => 'CTA Button'
-  ]); ?>
- *
- */
+    let passedClassName = 'btn'
 
-// <?php if(isset($href) && $href !== "") { ?>
-//   <a class="btn <?= $class ?> <?= isset($icon) ? 'btn--icon' : '' ?>"
-//     <?= isset($target) ? 'target="'.$target.'"' : '' ?>
-//     <?= isset($name) ? 'aria-label="'.$name.'"' : '' ?>
-//     <?= isset($dataAttr) ? $dataAttr : '' ?>
-//      href="<?= $href ?>">
-//     <span class="btn__text">
-//         <?= $buttonText ?>
-//       <?php if(isset($icon)) { ?>
-//         <span class="btn__icon"><?= get_partial($icon) ?></span>
-//       <?php } ?>
-//       </span>
-//   </a>
-// <?php } else { ?>
-//   <button type="<?= isset($type) ? $type : 'button' ?>" class="btn
-//           <?= $class ?> <?= isset($icon) ? 'btn--icon' : '' ?>"
-//     <?= isset($name) ? 'aria-label="'.$name.'"' : '' ?>
-//     <?= isset($dataAttr) ? $dataAttr : '' ?>>
-//     <span class="btn__text">
-//         <?= $buttonText ?>
-//       <?php if(isset($icon)) { ?>
-//         <span class="btn__icon"><?= get_partial($icon) ?></span>
-//       <?php } ?>
-//       </span>
-//   </button>
-// <?php } ?>
+    if (className) {
+        passedClassName += ` ${className}`
+    }
+
+    if (icon) {
+        passedClassName += ' btn--icon'
+    }
+
+    return (
+        <>
+            {href ? (
+                <a
+                    className={passedClassName}
+                    target={target ?? ''}
+                    aria-label={name ?? ''}
+                    href={href}
+                >
+                    <span className="btn__text">
+                        {btnText}
+                        {icon ? (
+                            <span className="btn__icon">{icon}</span>
+                        ) : null}
+                    </span>
+                </a>
+            ) : (
+                <button
+                    type={type ?? 'button'}
+                    aria-label={name ?? ''}
+                    className={
+                        'btn ' + className ?? '' + icon ? 'btn--icon' : ''
+                    }
+                >
+                    <span className="btn__text">
+                        {btnText}
+                        {icon ? (
+                            <span className="btn__icon">{icon}</span>
+                        ) : null}
+                    </span>
+                </button>
+            )}
+        </>
+    )
+}
+
+export default Button

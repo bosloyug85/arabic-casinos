@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import List from '@/components/List'
+import StickyNav from '@/components/StickyNav'
 
 export const renderModules = (modules: any) => {
     if (modules) {
@@ -14,6 +15,8 @@ export const renderModules = (modules: any) => {
                 />
             ) : module['acf_fc_layout'] === 'reviews' ? (
                 <List key={index} listItems={module['review']} />
+            ) : module['acf_fc_layout'] === 'sticky_nav' ? (
+                <StickyNav key={index} items={module['sticky_nav']} />
             ) : null
         )
     }

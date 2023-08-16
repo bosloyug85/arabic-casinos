@@ -29,18 +29,16 @@ $black: #000000;
 
 // CUSTOM COLORS
 $red: #b31f24;
-$purple: #5a04e2;
-$grey-dark: #707070;
-$grey-light: #bdbcbc;
 $link-color: #27bcfc;
-$yellow: #faff00;
-$yellow-alt: #feffbf;
+$gold: #e2cd8b;
+$dark: #13161a;
+$grey: #272c33;
 
 // PROJECT COLORS
-$bg-color: #131619;
-$primary-color: #2c7497;
-$secondary-color: #e2cd8b;
+$bg-color: $dark;
+$primary-color: $gold;
+$secondary-color: #272c33;
 
 $body-color: $white;
 $body-bg-color: $bg-color;
-$headline-color: $secondary-color;
+$headline-color: $primary-color;
