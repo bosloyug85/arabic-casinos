@@ -1,8 +1,9 @@
 import '../static/scss/main.scss'
 import React from 'react'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, Kanit } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
+const kanit = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata = {
     title: 'Create Next App',
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children} TEST</body>
+            <body className={plus_jakarta_sans.className}>{children} TEST</body>
         </html>
     )
 }

@@ -37,8 +37,10 @@ $yellow: #faff00;
 $yellow-alt: #feffbf;
 
 // PROJECT COLORS
+$bg-color: #131619;
 $primary-color: #2c7497;
+$secondary-color: #e2cd8b;
 
-$body-color: $black;
-$body-bg-color: $white;
-$headline-color: $black;
+$body-color: $white;
+$body-bg-color: $bg-color;
+$headline-color: $secondary-color;
