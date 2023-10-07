@@ -1,0 +1,30 @@
+.nav-menu {
+    li {
+        &:not(:last-child) {
+            margin-right: rem(32);
+        }
+
+        a {
+            position: relative;
+            color: $white;
+            font-size: rem(18);
+            line-height: line-height(18, 27);
+            font-weight: 400;
+
+            &:after {
+                height: 2px;
+                top: calc(100% + #{rem(5)});
+            }
+
+            &.is-active {
+                color: $primary-color;
+                font-weight: 700;
+
+                &:after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

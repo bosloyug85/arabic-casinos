@@ -1,0 +1,100 @@
+@import '../components/hamburger';
+
+.nav-bar {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    transition: background $t-basic, border $t-basic, transform $t-basic;
+    will-change: transform;
+    padding-top: rem(6);
+
+    @include media-breakpoint-up(md) {
+        padding-top: rem(36);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(42);
+    }
+
+    &__left {
+        display: flex;
+        align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
+        margin-left: rem(-6);
+
+        @include media-breakpoint-up(md) {
+            margin: rem(-6);
+        }
+
+        .logo {
+            display: inline-flex;
+            pointer-events: auto;
+            padding: rem(6);
+
+            svg {
+                width: rem(36);
+                height: rem(36);
+
+                @include media-breakpoint-up(md) {
+                    width: rem(48);
+                    height: rem(48);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    width: rem(52);
+                    height: rem(52);
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
+
+        .links {
+            display: flex;
+            align-items: center;
+            margin-right: rem(-16);
+
+            @include media-breakpoint-up(md) {
+                margin-top: rem(-16);
+            }
+
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: rem(16);
+
+                .icon {
+                    width: rem(20);
+                    height: rem(20);
+                    transition: transform $t-basic;
+                }
+
+                .icon-search {
+                    transform-origin: 38% 40%;
+                }
+
+                button {
+                    display: flex;
+                    padding: rem(16);
+                    margin: rem(-16);
+                    pointer-events: auto;
+
+                    @include hover() {
+                        .icon-search {
+                            transform: rotate(-25deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,19 +1,19 @@
-import { getNavigationItemsByMenuSlug, getPageBySlug } from '@/app/lib/api'
 import GeneralTitle from '@/components/GeneralTitle'
 import Hero from '@/components/Hero'
-import RootLayout from '@/components/RootLayout'
 import ScrollSpy from '@/components/ScrollSpy'
+// import List from '@/components/List'
 import React from 'react'
+import { getNavigationItemsByMenuSlug, getPageBySlug } from './lib/api'
 
-export const getServerSideProps = async ({ params }: any) => {
-    // const page = await getPageBySlug(params.slug)
-    const navigationItems = await getNavigationItemsByMenuSlug('header-menu')
-    return { props: { navigationItems } }
-}
+// export const getServerSideProps = async ({ params }: any) => {
+//     const page = await getPageBySlug(params.slug)
+//     const navigationItems = await getNavigationItemsByMenuSlug('header-menu')
+//     return { props: { page, navigationItems } }
+// }
 
 const HomePage = () => {
     return (
-        <RootLayout>
+        <div style={{ maxWidth: 'auto', width: 'auto' }}>
             <Hero
                 title="The Best Arabic Casinos Online"
                 content={
@@ -43,7 +43,7 @@ const HomePage = () => {
             />
             <ScrollSpy />
             <GeneralTitle title={'Top Online Casinos and Sportsbook'} />
-        </RootLayout>
+        </div>
     )
 }
 

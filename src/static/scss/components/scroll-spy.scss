@@ -1,0 +1,86 @@
+@import '../utility.scss';
+
+.scroll-spy {
+    position: sticky;
+    top: calc(var(--header-height) + rem(15));
+    left: 0;
+    transition: $t-hover;
+    z-index: 2;
+
+    &__nav {
+        display: table;
+        margin: auto;
+        border-radius: rem(12);
+        background: #353b45;
+        padding: rem(8) rem(19);
+
+        ul {
+            gap: 0 rem(16);
+        }
+
+        a {
+            position: relative;
+            padding: rem(8);
+            gap: 0 rem(8);
+            color: $white;
+            font-family: $medium-font;
+            font-size: rem(12);
+            line-height: line-height(12, 14.4);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: $t-hover;
+
+            @include hover() {
+                color: $primary-color;
+
+                svg {
+                    path {
+                        stroke: $primary-color;
+                    }
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                box-shadow: 0px 4px 12px 0px rgba(25, 28, 33, 0.8);
+                transition: $t-hover;
+
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            svg {
+                flex: 0 0 rem(24);
+                width: auto;
+                fill: transparent;
+
+                path {
+                    transition: $t-hover;
+                }
+            }
+
+            &.is-active {
+                border-color: #6f7d91;
+                background-color: #48515e;
+                color: $primary-color;
+
+                svg {
+                    path {
+                        stroke: $primary-color;
+                    }
+                }
+
+                &:after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

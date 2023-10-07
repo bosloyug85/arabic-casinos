@@ -1,0 +1,41 @@
+@import '../utility.scss';
+
+.partners {
+    border-radius: rem(24);
+    border: 2px solid #2d323b;
+    background: #21252b;
+    padding: rem(16) rem(40);
+    gap: 0 rem(40);
+
+    &:not(:last-of-type) {
+        margin-bottom: rem(12);
+    }
+
+    &__image {
+        flex: 0 0 rem(134);
+    }
+
+    &__title {
+        margin-right: auto;
+
+        strong {
+            font-family: $black-font;
+            font-size: rem(22);
+            line-height: line-height(22, 26);
+            font-weight: 700;
+            display: block;
+            padding-bottom: rem(4);
+        }
+
+        small {
+            font-family: $medium-font;
+            font-size: rem(12);
+            line-height: line-height(12, 14);
+            font-style: normal;
+        }
+    }
+
+    &__cta {
+        gap: rem(16);
+    }
+}

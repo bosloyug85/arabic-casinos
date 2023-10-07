@@ -1,0 +1,38 @@
+@import '../utility.scss';
+
+.hero {
+    position: relative;
+    height: calc(100vh - 20px);
+
+    &__bg {
+        position: absolute;
+        top: calc(20px * -1);
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container {
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__content {
+        max-width: rem(1110);
+
+        p {
+            padding-top: rem(16);
+            font-size: rem(20);
+            line-height: line-height(20, 30);
+            font-family: $bold-font;
+            max-width: rem(1040);
+            margin: 0 auto;
+
+            &:last-of-type {
+                padding-bottom: rem(40);
+            }
+        }
+    }
+}

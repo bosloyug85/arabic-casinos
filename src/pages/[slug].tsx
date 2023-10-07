@@ -4,6 +4,7 @@ import { getNavigationItemsByMenuSlug, getPageBySlug } from '@/app/lib/api'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
 import { Plus_Jakarta_Sans, Kanit } from 'next/font/google'
+import RootLayout from '@/components/RootLayout'
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 const kanit = Kanit({ subsets: ['latin'], weight: ['500', '600'] })
@@ -22,14 +23,10 @@ const Page = (props: any) => {
     // console.log('acf', modules)
     // console.log('navigation items ', navigationItems)
     return (
-        <div className={plus_jakarta_sans.className}>
-            <div
-                className={kanit.className}
-                dangerouslySetInnerHTML={{ __html: data.yoast_head }}
-            ></div>
+        <RootLayout>
             <Navigation navigationItems={navigationItems} />
             {renderModules(modules)}
-        </div>
+        </RootLayout>
     )
 }
 

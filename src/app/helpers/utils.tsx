@@ -1,5 +1,7 @@
 import Hero from '@/components/Hero'
-import List from '@/components/List'
+import PartnersList from '@/components/PartnersList'
+
+import ScrollSpy from '@/components/ScrollSpy'
 import StickyNav from '@/components/StickyNav'
 
 export const renderModules = (modules: any) => {
@@ -8,15 +10,20 @@ export const renderModules = (modules: any) => {
             module['acf_fc_layout'] === 'hero' ? (
                 <Hero
                     key={index}
-                    reverse="initial"
                     title={module['title']}
-                    description={module['description']}
-                    backgroundImage={module['image']}
+                    content={module['description']}
+                    bgImage={module['image']}
+                    btnText={module['button']['title']}
+                    btnHref={module['button']['url']}
                 />
             ) : module['acf_fc_layout'] === 'reviews' ? (
-                <List key={index} listItems={module['review']} />
+                <PartnersList
+                    key={index}
+                    title={module['title']}
+                    listItems={module['review']}
+                />
             ) : module['acf_fc_layout'] === 'sticky_nav' ? (
-                <StickyNav key={index} items={module['sticky_nav']} />
+                <ScrollSpy key={index} items={module['sticky_nav']} />
             ) : null
         )
     }
