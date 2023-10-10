@@ -1,0 +1,48 @@
+.content-listing-block {
+    padding-bottom: rem(80);
+
+    &__item {
+        padding: rem(32) rem(40);
+        border-radius: rem(24);
+        border: 2px solid #2d323b;
+        background: #1d2126;
+
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .left {
+                padding: 0 0 0 rem(120);
+            }
+        }
+    }
+
+    .left {
+        padding-right: rem(120);
+
+        p {
+            &:not(:last-of-type) {
+                padding-bottom: rem(24);
+            }
+        }
+    }
+
+    .right {
+        flex: 0 0 rem(292);
+
+        .image-wrapper {
+            border-radius: rem(24);
+            border: 2px solid #2d323b;
+            background: #272c33;
+            box-shadow: 0 rem(4) rem(32) 0 #191c21;
+            padding: rem(24);
+
+            img {
+                border-radius: rem(12);
+            }
+        }
+    }
+}
