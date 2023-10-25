@@ -7,9 +7,13 @@ export async function getPageBySlug(slug: string) {
 }
 
 export async function getNavigationItemsByMenuSlug(menuSlug: string) {
+    // const data = await fetch(
+    //     `${process.env.API_BASE_URL}/wp-json/get-menus/menu/${menuSlug}`
+    // )
     const data = await fetch(
-        `${process.env.API_BASE_URL}/wp-json/get-menus/menu/${menuSlug}`
+        `https://api-arabic.devcode.biz/wp-json/api/v1/navigation/header`
     )
+
     const response = await data.json()
     return response
 }

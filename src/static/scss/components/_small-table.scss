@@ -1,0 +1,38 @@
+.small-table {
+    border: rem(2) solid #2d323b;
+    border-radius: rem(24);
+    @include media-breakpoint-down(md) {
+        border-radius: rem(12);
+    }
+    overflow: hidden;
+    &__thead {
+        display: flex;
+        background-color: #1d2126;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0 rem(16);
+            width: 50%;
+            padding: rem(8) rem(24);
+            &:first-child {
+                border-right: rem(2) solid #2d323b;
+            }
+        }
+    }
+    &__item {
+        &:not(:last-child) {
+            border-bottom: rem(2) solid #2d323b;
+        }
+        &-col {
+            width: 50%;
+            padding: rem(16) rem(24);
+            align-items: center;
+            gap: 0 rem(8);
+            &:first-child {
+                border-right: rem(2) solid #2d323b;
+            }
+        }
+    }
+}

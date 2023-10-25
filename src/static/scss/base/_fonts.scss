@@ -1,0 +1,6 @@
+@import '../utility/mixins/font-import';
+
+@include font-face($regular-font);
+@include font-face($medium-font);
+@include font-face($bold-font);
+@include font-face($headline-font);

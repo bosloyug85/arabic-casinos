@@ -1,0 +1,150 @@
+.simple-content-double {
+    padding-bottom: rem(80);
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(42);
+    }
+
+    &__inner {
+        @include media-breakpoint-down(sm) {
+            padding: rem(32) 0;
+        }
+    }
+
+    .top {
+        padding: rem(80);
+        background: $black-secondary;
+        border-radius: rem(24);
+        border: 2px solid #2d323b;
+        margin-bottom: rem(40);
+
+        @include media-breakpoint-down(md) {
+            border-radius: rem(12);
+            padding: rem(40);
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(32) rem(16);
+            margin-bottom: rem(24);
+        }
+
+        .h2 {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-bottom: rem(40);
+
+            @include media-breakpoint-down(sm) {
+                padding-bottom: rem(24);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #7d714d;
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+            span {
+                padding: 0 rem(40);
+                background-color: $black-secondary;
+                position: relative;
+                z-index: 1;
+
+                @include media-breakpoint-down(sm) {
+                    padding: 0;
+                }
+            }
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(16);
+            }
+        }
+    }
+
+    .bottom {
+        padding: rem(40) rem(80) rem(60) rem(80);
+        background-color: $primary-color;
+        border-radius: rem(24);
+
+        @include media-breakpoint-down(md) {
+            border-radius: rem(12);
+            padding: rem(30) rem(40) rem(30) rem(40);
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(32) rem(16);
+        }
+
+        &--image-title {
+            align-items: center;
+            gap: 0 rem(24);
+            padding-bottom: rem(40);
+
+            @include media-breakpoint-down(sm) {
+                flex-direction: column;
+                gap: rem(16) 0;
+                padding-bottom: rem(18);
+            }
+
+            .image-wrapper {
+                min-width: rem(130);
+            }
+
+            .h2 {
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                @include media-breakpoint-down(sm) {
+                    padding-bottom: 0;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #7d714d;
+
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                }
+
+                span {
+                    padding-right: rem(24);
+                    background-color: $primary-color;
+                    color: $black-secondary;
+                    position: relative;
+                    z-index: 1;
+
+                    @include media-breakpoint-down(sm) {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        p {
+            color: $black-secondary;
+
+            &:not(:last-child) {
+                margin-bottom: rem(16);
+            }
+        }
+    }
+}

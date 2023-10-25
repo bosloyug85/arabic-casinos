@@ -43,13 +43,17 @@ a {
 body {
 }
 
+svg {
+    fill: transparent;
+}
 main,
 .main {
+    padding-top: var(--header-height-fixed);
 }
 
 // RESPONSIVE
 html {
     @include media-breakpoint-up(xxl) {
-        font-size: 0.879vw;
+        font-size: 0.833vw;
     }
 }

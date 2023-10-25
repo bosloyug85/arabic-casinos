@@ -1,7 +1,11 @@
 import React from 'react'
+import star from '../../static/vectors/star.svg'
+import Button from '../Button'
+import StarVector from '../StarVector'
 
 const Partner = (props: any) => {
     const { imgSrc, title, bonus, buttonText } = props
+    let stars = [1, 2, 3, 4, 5]
     return (
         <div className="partners u-d-flex u-align-center">
             <div className="partners__image">
@@ -12,15 +16,21 @@ const Partner = (props: any) => {
                 <small>{bonus}</small>
             </div>
             <div className="partners__rating">
-                {/* Add rating content here */}
+                {stars.map((item: any) => (
+                    <StarVector />
+                ))}
             </div>
             <div className="partners__cta u-d-flex">
-                <a className="btn--outline btn--primary" href="#">
-                    Read Review
-                </a>
-                <a className="btn--solid btn--primary" href="#">
-                    {buttonText}
-                </a>
+                <Button
+                    className="btn btn--outline btn--primary"
+                    btnText="Read Review"
+                    href="#"
+                />
+                <Button
+                    className="btn--solid btn--primary"
+                    btnText={buttonText}
+                    href="#"
+                />
             </div>
         </div>
     )

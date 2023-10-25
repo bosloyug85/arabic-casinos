@@ -1,0 +1,48 @@
+.card-slider {
+    position: relative;
+    margin: rem(40) 0 rem(40);
+
+    @include media-breakpoint-down(md) {
+        margin: rem(40) 0 rem(20);
+    }
+
+    .card-criteria {
+        width: auto;
+    }
+
+    .splide {
+        &__arrows {
+            position: absolute;
+            right: 0;
+            top: -54%;
+            gap: 0 rem(12);
+
+            @include media-breakpoint-down(xsm) {
+                top: -45%;
+            }
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+
+        &__pagination {
+            display: flex;
+            gap: 0 rem(8);
+            justify-content: center;
+            margin-top: rem(24);
+        }
+
+        .splide__pagination__page {
+            background-color: #616e80;
+            width: rem(10);
+            height: rem(10);
+            flex: 0 0 rem(10);
+            border-radius: 50%;
+
+            &.is-active {
+                background-color: #272c33;
+            }
+        }
+    }
+}

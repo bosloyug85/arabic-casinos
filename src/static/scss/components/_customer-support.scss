@@ -1,0 +1,12 @@
+.customer-support {
+    &__inner {
+        padding: 0 rem(8) rem(80);
+        padding-bottom: rem(80);
+        border: rem(2) solid #2d323b;
+        border-radius: rem(24);
+        @include media-breakpoint-down(md) {
+            padding: 0 0 rem(40);
+            border-radius: rem(12);
+        }
+    }
+}

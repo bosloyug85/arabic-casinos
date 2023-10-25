@@ -5,12 +5,18 @@
     transition-duration: 0.15s;
     transition-timing-function: linear;
     transform-origin: center center;
+    display: none;
+
+    @include media-breakpoint-down(lg) {
+        display: block;
+    }
 
     &__inner {
         display: block;
-        height: rem(41);
+        height: rem(24);
+        width: rem(24);
         cursor: pointer;
-        padding: 0 rem(14);
+        /* padding: 0 rem(14); */
         transition: all 0.3s ease 0s;
         transform-origin: center;
         transform: rotate(0deg);
@@ -18,26 +24,26 @@
     }
 
     .line {
-        width: rem(6);
-        height: rem(6);
+        width: rem(18);
+        height: rem(3);
         margin-left: rem(1);
-        margin-bottom: rem(10);
+        margin: auto auto rem(5) auto;
         display: block;
-        border-radius: 100%;
-        background: $primary-color;
+        border-radius: rem(3);
+        background: $red;
         transform-origin: center;
         transition: all 0.2s ease 0s;
 
         &--1 {
-            border-radius: 100%;
-            background: $primary-color;
+            /* border-radius: 100%; */
+            background: $red;
             transform-origin: center;
             transition: all 0.2s ease 0s;
         }
 
         &--3 {
-            border-radius: 100%;
-            background: $primary-color;
+            /* border-radius: 100%; */
+            background: $red;
             transform-origin: center;
             transition: all 0.2s ease 0s;
         }
@@ -52,10 +58,10 @@
         .line--1,
         .line--3 {
             border-radius: 0;
-            height: rem(3);
-            width: rem(30);
+            height: rem(2);
+            width: rem(24);
             left: 0;
-            top: rem(20);
+            top: rem(11);
             position: absolute;
             transition: all 0.2s ease 0s;
             transform-origin: center;

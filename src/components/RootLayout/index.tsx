@@ -1,9 +1,6 @@
-import '../../static/scss/main.scss'
+// import '../../static/scss/main.scss'
 import React from 'react'
-import { Plus_Jakarta_Sans, Kanit } from 'next/font/google'
-
-const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
-const kanit = Plus_Jakarta_Sans({ subsets: ['latin'] })
+import './fonts.css'
 
 export const metadata = {
     title: 'Create Next App',
@@ -11,8 +8,10 @@ export const metadata = {
 }
 
 export default function RootLayout({
+    props,
     children,
 }: {
+    props?: any
     children: React.ReactNode
 }) {
     return <main className="main">{children}</main>

@@ -1,0 +1,37 @@
+.basic-card {
+    padding: rem(24);
+    border-radius: rem(24);
+    border: 2px solid #2d323b;
+    background: #1d2126;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        padding: rem(16);
+        gap: rem(32) 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+        gap: rem(24) 0;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: rem(16);
+    }
+
+    .right {
+        .h4 {
+            text-transform: uppercase;
+            padding-bottom: rem(8);
+        }
+    }
+
+    .left {
+        flex: 0 0 rem(130);
+        margin-right: rem(24);
+
+        @include media-breakpoint-down(sm) {
+            width: 50%;
+            margin-right: 0;
+        }
+    }
+}

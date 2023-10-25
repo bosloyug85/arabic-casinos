@@ -1,0 +1,32 @@
+.closing-thoughts {
+    padding: rem(48) 0 rem((80));
+    @include media-breakpoint-down(md) {
+        padding: rem(48) 0 rem((40));
+    }
+    &__inner {
+        gap: 0 rem(20);
+        padding-bottom: rem(40);
+        @include media-breakpoint-down(md) {
+            padding-bottom: rem(20);
+        }
+        @include media-breakpoint-down(sm) {
+            padding-bottom: rem(20);
+            gap: rem(20) 0;
+            flex-wrap: wrap;
+        }
+    }
+    &__text-bottom {
+        text-align: center;
+        max-width: rem(910);
+        margin: 0 auto;
+        p {
+            font-size: rem(20);
+            line-height: line-height(20, 30);
+            font-weight: 600;
+            @include media-breakpoint-down(md) {
+                font-size: rem(16);
+                line-height: line-height(16, 24);
+            }
+        }
+    }
+}

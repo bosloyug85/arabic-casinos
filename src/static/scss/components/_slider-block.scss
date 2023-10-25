@@ -1,0 +1,66 @@
+.slider-block {
+    padding: rem(80) 0;
+
+    &__wrapper {
+        padding: rem(60) rem(40) rem(40) rem(40);
+        border-radius: rem(24);
+        border: 2px solid #2d323b;
+        background: #1d2126;
+        overflow: hidden;
+    }
+
+    &__header {
+        padding-bottom: rem(40);
+
+        .left {
+            max-width: rem(936);
+
+            h2,
+            .h2 {
+                padding-bottom: rem(16);
+            }
+
+            p {
+                font-size: rem(20);
+                line-height: line-height(20, 30);
+                font-family: $bold-font;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .splide {
+        &__track {
+            overflow: visible;
+        }
+
+        &__slide {
+            .c-card {
+                border-radius: rem(24);
+                border: 2px solid #2d323b;
+                background: #272c33;
+                box-shadow: 0 rem(4) rem(32) 0 #191c21;
+            }
+        }
+
+        &__arrows {
+            gap: 0 rem(12);
+        }
+
+        &__pagination {
+            padding-top: rem(24);
+            gap: 0 rem(8);
+        }
+
+        &__pagination__page {
+            width: rem(10);
+            height: rem(10);
+            background-color: #272c33;
+            border-radius: 50%;
+
+            &.is-active {
+                background-color: #616e80;
+            }
+        }
+    }
+}

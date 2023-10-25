@@ -2,16 +2,17 @@ import logo from '../../static/images/arabic-casino.png'
 
 const Navigation = (props: any) => {
     const { navigationItems } = props
+    let items = navigationItems.pages
+
     const renderDropdownItems = (parentID: any) => {
-        return navigationItems
+        return items
             .filter(
-                (item: any) =>
-                    item.menu_item_parent.toString() === parentID.toString()
+                (item: any) => item.menu_item_parent === parentID.toString()
             )
             .map((item: any) => (
-                <li key={item.ID}>
-                    <a href={'/' + item.slug}>{item.title}</a>
-                    {renderDropdownItems(item.ID)}
+                <li key={item.object_id}>
+                    <a href={'/' + item.url}>{item.title}</a>
+                    {renderDropdownItems(item.object_id)}
                 </li>
             ))
     }
@@ -37,7 +38,7 @@ const Navigation = (props: any) => {
             <div className="header__center">
                 <nav className="nav-menu js-nav">
                     <ul className="nav-menu__list u-d-flex u-align-center">
-                        {navigationItems
+                        {items
                             .filter(
                                 (item: any) => item.menu_item_parent === '0'
                             )

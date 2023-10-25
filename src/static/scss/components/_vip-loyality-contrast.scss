@@ -1,0 +1,72 @@
+.vip-loyality-contrast {
+    padding-bottom: rem(80);
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(42);
+    }
+
+    &__inner {
+        padding: rem(80);
+        background-color: $primary-color;
+        border-radius: rem(24);
+        border: 2px solid #e2cd8b;
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(40);
+        }
+
+        @include media-breakpoint-down(md) {
+            border-radius: rem(12);
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(32) rem(16);
+        }
+    }
+
+    .h2 {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding-bottom: rem(40);
+
+        @include media-breakpoint-down(sm) {
+            padding-bottom: rem(24);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #7d714d;
+
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
+        }
+
+        span {
+            padding-right: rem(24);
+            background-color: $primary-color;
+            color: $black-secondary;
+            position: relative;
+            z-index: 1;
+
+            @include media-breakpoint-down(sm) {
+                padding-right: rem(16);
+            }
+        }
+    }
+
+    p {
+        color: $black-secondary;
+
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+    }
+}

@@ -1,11 +1,25 @@
 .content-listing-block {
     padding-bottom: rem(80);
 
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(42);
+    }
+
     &__item {
         padding: rem(32) rem(40);
         border-radius: rem(24);
         border: 2px solid #2d323b;
         background: #1d2126;
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column-reverse;
+            padding: rem(16);
+            gap: rem(32) 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+            gap: rem(24) 0;
+        }
 
         &:not(:last-child) {
             margin-bottom: rem(16);
@@ -14,8 +28,17 @@
         &:nth-child(even) {
             flex-direction: row-reverse;
 
+            @include media-breakpoint-down(sm) {
+                flex-direction: column-reverse;
+                gap: rem(32) 0;
+            }
+
             .left {
                 padding: 0 0 0 rem(120);
+
+                @include media-breakpoint-down(sm) {
+                    padding: 0;
+                }
             }
         }
     }
@@ -23,15 +46,35 @@
     .left {
         padding-right: rem(120);
 
+        @include media-breakpoint-down(md) {
+            padding-right: rem(30);
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: 0;
+        }
+
         p {
             &:not(:last-of-type) {
                 padding-bottom: rem(24);
+
+                @include media-breakpoint-down(sm) {
+                    padding-bottom: rem(16);
+                }
             }
         }
     }
 
     .right {
         flex: 0 0 rem(292);
+
+        @include media-breakpoint-down(md) {
+            flex: 0 0 rem(233);
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
 
         .image-wrapper {
             border-radius: rem(24);

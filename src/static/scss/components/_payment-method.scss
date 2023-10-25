@@ -1,0 +1,21 @@
+.payment-method {
+    padding-bottom: rem(80);
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: rem(42);
+    }
+
+    &__inner {
+        gap: 0 rem(20);
+
+        @include media-breakpoint-down(md) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: rem(40);
+        }
+
+        @include media-breakpoint-down(md) {
+            gap: rem(20);
+        }
+    }
+}

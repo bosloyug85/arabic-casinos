@@ -1,0 +1,26 @@
+.left-title {
+    position: relative;
+    padding-bottom: rem(40);
+    @include media-breakpoint-down(sm) {
+        text-align: left;
+        padding: rem(16) 0 rem(32) 0;
+    }
+
+    .h2 {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        padding-bottom: rem(16);
+    }
+
+    p {
+        font-family: $bold-font;
+        font-size: rem(20);
+        font-weight: 600;
+        line-height: line-height(20, 30);
+        @include media-breakpoint-down(sm) {
+        }
+    }
+}

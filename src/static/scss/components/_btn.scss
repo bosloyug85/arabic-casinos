@@ -1,5 +1,4 @@
 .btn {
-    z-index: 1;
     position: relative;
     display: inline-flex;
     position: relative;
@@ -7,14 +6,21 @@
     justify-content: center;
     background-color: transparent;
     border: none;
+    padding: 0;
     white-space: nowrap;
-    line-height: 1;
-    font-weight: 700;
-    height: rem(60);
-    padding: 0 rem(24);
-    overflow: hidden;
-    border-radius: rem(12);
     font-size: rem(18);
+    line-height: line-height(18, 27);
+    font-weight: 700;
+    font-family: $black-font;
+    height: rem(59);
+    padding: rem(16) rem(24);
+    border-radius: rem(12);
+    overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+        padding: rem(16);
+        height: rem(45);
+    }
 
     &:after {
         content: '';
@@ -23,26 +29,30 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
         transform-origin: center;
         border-radius: inherit;
         transition: $t-hover;
         will-change: transform;
-        border: 2px solid var(--btn-color, $primary-color);
-        background-color: var(--btn-color, $primary-color);
+        border: 2px solid var(--btn-color, $black);
+        background-color: var(--btn-color, $black);
     }
 
     &__text {
-        color: var(--text-color, $dark);
+        color: var(--text-color, $btn-color);
         display: inline-flex;
         line-height: inherit;
         font-size: inherit;
         font-weight: inherit;
         align-items: center;
         transition: $t-hover;
+        z-index: 1;
 
         > span {
             padding: 0 rem(2) 0 rem(10);
+        }
+
+        @include media-breakpoint-down(lg) {
+            font-size: rem(16);
         }
     }
 
@@ -54,6 +64,7 @@
         margin-right: 1.5em;
         will-change: transform;
         transform: translateZ(0);
+        z-index: 1;
 
         svg {
             width: 1.875em;
@@ -88,15 +99,16 @@
     &--outline {
         &:after {
             background-color: transparent;
+            border-color: #e2cd8b;
         }
 
         .btn__text {
-            --text-color: #{$black};
+            --text-color: #{$white};
         }
 
         @include hover() {
             &:after {
-                background-color: var(--btn-color, $black);
+                background-color: transparent;
             }
 
             .btn__text {
@@ -115,6 +127,12 @@
             &:after {
                 --btn-color: #{$primary-color};
             }
+
+            @include hover() {
+                &:after {
+                    --btn-color: #{#a19263};
+                }
+            }
         }
 
         // outline type
@@ -131,6 +149,24 @@
                 .btn__text {
                     --text-color: #{$white};
                 }
+            }
+        }
+    }
+
+    &--yellow {
+        height: rem(75);
+
+        &:after {
+            --btn-color: #{#db9200};
+        }
+
+        .btn__text {
+            --text-color: #{$white};
+        }
+
+        @include hover() {
+            &:after {
+                --btn-color: #{#a19263};
             }
         }
     }

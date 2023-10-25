@@ -1,0 +1,18 @@
+.c-card {
+    padding: rem(24);
+    border-radius: rem(24);
+    border: 2px solid #2d323b;
+    background: #1d2126;
+
+    .image {
+        max-width: rem(130);
+        margin-bottom: rem(24);
+    }
+
+    .content {
+        h4,
+        .h4 {
+            padding-bottom: rem(8);
+        }
+    }
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../static/scss/components/general-title.scss'
 
 // type HeroProps = {
 //     children?: JSX.Element[]
@@ -18,7 +17,7 @@ const GeneralTitle = (props: any) => {
                 <h2 className="h2">
                     <span>{title}</span>
                 </h2>
-                {description && <div>{description}</div>}
+                {description && <p>{description}</p>}
             </div>
         </section>
     )

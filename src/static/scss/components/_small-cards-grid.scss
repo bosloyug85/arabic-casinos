@@ -1,0 +1,22 @@
+.small-cards-grid {
+    padding-bottom: rem(80);
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(42);
+    }
+
+    &__inner {
+        gap: rem(20);
+        flex-wrap: wrap;
+
+        @include media-breakpoint-down(md) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: rem(40);
+        }
+
+        @include media-breakpoint-down(sm) {
+            gap: rem(20);
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import '../../static/scss/components/hero.scss'
 import Button from '../Button'
 import ImageComponent from '../Image'
@@ -14,6 +14,27 @@ type HeroProps = {
 
 const Hero = (props: HeroProps) => {
     const { title, content, btnHref, btnText, bgImage, children } = props
+
+    useEffect(() => {
+        var header: any = document.querySelector('.js-header')
+        var headerHeight = () => {
+            document.documentElement.style.setProperty(
+                '--header-height',
+                `${header.clientHeight}px`
+            )
+            document.documentElement.style.setProperty(
+                '--header-height-fixed',
+                `${header.clientHeight}px`
+            )
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > window.innerHeight) {
+                headerHeight()
+            }
+        })
+        headerHeight()
+    }, [])
+
     return (
         <section className="hero">
             <div className="container u-d-flex u-justify-center u-align-center">

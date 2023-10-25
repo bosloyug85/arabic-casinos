@@ -1,0 +1,89 @@
+.big-table {
+    &__item {
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            overflow: hidden;
+        }
+        &:first-child {
+            @include media-breakpoint-down(md) {
+                border-top-left-radius: rem(12);
+                border-top-right-radius: rem(12);
+            }
+        }
+
+        &:last-child {
+            @include media-breakpoint-down(md) {
+                border-bottom-left-radius: rem(12);
+                border-bottom-right-radius: rem(12);
+            }
+        }
+        &:not(:last-child) {
+            border-bottom: rem(2) solid #2d323b;
+        }
+
+        &:nth-child(even) {
+            background-color: #1d2126;
+            @include media-breakpoint-down(md) {
+                background: transparent;
+            }
+        }
+        &:nth-child(odd) {
+            background: transparent;
+        }
+        &-left {
+            padding: rem(16) rem(24);
+            flex: 0 0 rem(250);
+            align-items: center;
+            gap: 0 rem(8);
+            border-right: rem(2) solid #2d323b;
+            @include media-breakpoint-down(md) {
+                flex: auto;
+                border-right: 0;
+                padding: rem(8) rem(16);
+                background-color: #1d2126;
+            }
+            p {
+                font-weight: 400;
+                color: $primary-color;
+            }
+        }
+        &-right {
+            padding: rem(16) rem(24);
+            flex: 1;
+            p {
+                font-weight: 700;
+            }
+            @include media-breakpoint-down(md) {
+                padding: rem(8) rem(16);
+                flex: auto;
+            }
+        }
+    }
+
+    p,
+    a {
+        font-size: rem(18);
+        color: $white;
+    }
+    a {
+        transition: $t-hover;
+        @include hover() {
+            color: #a19263;
+        }
+    }
+    .card {
+        align-items: center;
+        gap: rem(8);
+        flex-wrap: wrap;
+        a {
+            color: $primary-color;
+            transition: $t-hover;
+            font-size: rem(12);
+            font-weight: 700;
+            margin-left: rem(8);
+            @include hover() {
+                opacity: 0.5;
+            }
+        }
+    }
+}

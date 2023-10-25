@@ -1,0 +1,75 @@
+.table-icons {
+    overflow: hidden;
+    &__table {
+        width: 100%;
+        border-radius: rem(24);
+        @include media-breakpoint-down(md) {
+            border-radius: rem(12);
+        }
+        border: rem(2) solid #2d323b;
+        @include media-breakpoint-down(md) {
+            overflow-x: scroll;
+        }
+        @include media-breakpoint-down(xs) {
+            max-width: rem(665);
+        }
+        table {
+            border-collapse: collapse;
+            border-radius: rem(24);
+            overflow: hidden;
+            width: 100%;
+            @include media-breakpoint-down(md) {
+                border-radius: rem(12);
+            }
+        }
+        tr {
+            @include hover() {
+                background: #272c33;
+            }
+        }
+        .h4 {
+            font-weight: 500;
+        }
+        th {
+            background: #272c33;
+            padding: rem(30) rem(24);
+            border-bottom: rem(2) solid #2d323b;
+            width: calc(100% / 4);
+            white-space: nowrap;
+
+            @include media-breakpoint-down(md) {
+                padding: rem(20) rem(12);
+            }
+            &:not(:last-child) {
+                border-right: 2px solid #2d323b;
+            }
+            .u-d-flex {
+                align-items: center;
+                gap: 0 rem(16);
+            }
+        }
+
+        td {
+            padding: rem(16) rem(24);
+            font-size: rem(18);
+            font-family: $bold-font;
+            width: calc(100% / 4);
+            @include media-breakpoint-down(md) {
+                font-size: rem(16);
+            }
+        }
+
+        tbody {
+            tr {
+                &:not(:last-child) {
+                    border-bottom: rem(2) solid #2d323b;
+                }
+                td {
+                    &:not(:last-child) {
+                        border-right: 2px solid #2d323b;
+                    }
+                }
+            }
+        }
+    }
+}

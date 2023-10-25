@@ -1,8 +1,24 @@
 .box-content-block {
     padding-bottom: rem(80);
 
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(16);
+    }
+
+    &__inner {
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            gap: rem(32) 0;
+        }
+    }
+
     &__left {
         padding-right: rem(117);
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            padding-right: 0;
+        }
 
         p {
             &:not(:last-of-type) {
@@ -17,8 +33,16 @@
         background-color: $primary-color;
         border-radius: rem(24);
 
+        @include media-breakpoint-down(md) {
+            flex: auto;
+            text-align: center;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(40) rem(20);
+        }
+
         h3 {
-            font-size: rem(30);
             color: $bg-color;
         }
     }

@@ -1,39 +1,102 @@
 //#######################################
 //## CORE ###############################
 //#######################################
-@import 'utility';
+
+//#######################################
+//## VARIABLES ##########################
+//#######################################
+@import 'utility/variables/_colors.scss';
+@import 'utility/variables/_fonts.scss';
+@import 'utility/variables/_transitions.scss';
+
+//#######################################
+//## MIXINS #############################
+//#######################################
+@import 'utility/mixins/_typography-sizes.scss';
+@import 'utility/mixins/_breakpoints.scss';
+@import 'utility/mixins/_hover.scss';
+@import 'utility/mixins/_overlay.scss';
+@import 'utility/mixins/_browser.scss';
+@import 'utility/mixins/_ratio.scss';
+@import 'utility/mixins/_placeholder.scss';
+@import 'utility/mixins/_hide-scrollbar.scss';
+@import 'utility/mixins/_line-height.scss';
 
 //#######################################
 //## UTILITIES ##########################
 //#######################################
-@import 'utility/line-link';
-@import 'utility/utility-classes';
-@import 'utility/text-content';
+@import 'utility/_line-link.scss';
+@import 'utility/_utility-classes.scss';
+@import 'utility/_text-content.scss';
 
 //#######################################
 //## BASE ###############################
 //#######################################
-@import 'base/reset';
-@import 'base/html';
-@import 'base/typography';
-@import 'base/general';
-@import 'base/container';
+@import 'base/_reset.scss';
+@import 'base/_html.scss';
+@import 'base/_typography.scss';
+@import 'base/_general.scss';
+@import 'base/_container.scss';
 
 //#######################################
 //## LAYOUT #############################
 //#######################################
-@import 'layout/loader';
-@import 'layout/footer';
-@import 'layout/header';
+@import 'layout/_loader.scss';
+@import 'layout/_footer.scss';
+@import 'layout/_header.scss';
+@import 'navigation/nav-menu';
 
 //#######################################
 //## COMPONENTS #########################
 //#######################################
-@import 'components/btn';
-@import 'components/hero';
-@import 'components/partners';
-@import 'components/box-content-block';
-
-//#######################################
-//## MODULES ############################
-//#######################################
+@import 'components/_btn.scss';
+@import 'components/_hamburger.scss';
+@import 'components/_card-payments.scss';
+@import 'components/_card-criteria.scss';
+@import 'components/_listing-block-card.scss';
+@import 'components/_basic-card.scss';
+@import 'components/_card-casino.scss';
+@import 'components/_hero.scss';
+@import 'components/_scroll-spy-nav.scss';
+@import 'components/_general-title.scss';
+@import 'components/_partners.scss';
+@import 'components/_box-content-block.scss';
+@import 'components/_content-listing-block.scss';
+@import 'components/_author.scss';
+@import 'components/_payment-method.scss';
+@import 'components/_payment-method-cta.scss';
+@import 'components/_small-cards-grid.scss';
+@import 'components/_tips-for-beginners.scss';
+@import 'components/_info.scss';
+@import 'components/_review-tables.scss';
+@import 'components/_left-title.scss';
+@import 'components/_card-slider.scss';
+@import 'components/_partner-slider.scss';
+@import 'components/_wide-cards-grid.scss';
+@import 'components/_basic-cards-block.scss';
+@import 'components/_simple-content-block.scss';
+@import 'components/_text-image.scss';
+@import 'components/_display-block.scss';
+@import 'components/_casino-bonus.scss';
+@import 'components/_casino-bonus-listing.scss';
+@import 'components/_bonus-type-card.scss';
+@import 'components/_single-bonus-block.scss';
+@import 'components/_general-left-title.scss';
+@import 'components/_table-block.scss';
+@import 'components/_table-icons.scss';
+@import 'components/_customer-support.scss';
+@import 'components/_closing-thoughts.scss';
+@import 'components/_faq-block.scss';
+@import 'components/_multi-casino-card-content-block.scss';
+@import 'components/_simple-content-double.scss';
+@import 'components/_vip-loyality.scss';
+@import 'components/_vip-loyality-contrast.scss';
+@import 'components/_text-image-cta.scss';
+@import 'components/_table-content-block.scss';
+@import 'components/_small-table.scss';
+@import 'components/_big-table.scss';
+@import 'components/_why-content-block.scss';
+@import 'components/_comparison-table-content.scss';
+@import 'components/_type-table-block.scss';
+@import 'components/_casino-bonus-single.scss';
+@import 'components/_table-simple.scss';

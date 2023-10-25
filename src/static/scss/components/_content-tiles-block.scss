@@ -1,0 +1,11 @@
+.content-tiles-block {
+    padding-bottom: rem(80);
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        grid-column-gap: rem(20);
+        grid-row-gap: rem(20);
+    }
+}

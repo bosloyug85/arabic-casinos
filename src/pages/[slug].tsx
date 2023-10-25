@@ -3,11 +3,9 @@ import { renderModules } from '@/app/helpers/utils'
 import { getNavigationItemsByMenuSlug, getPageBySlug } from '@/app/lib/api'
 import Navigation from '@/components/Navigation'
 import Card from '@/components/Card'
-import { Plus_Jakarta_Sans, Kanit } from 'next/font/google'
 import RootLayout from '@/components/RootLayout'
-
-const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
-const kanit = Kanit({ subsets: ['latin'], weight: ['500', '600'] })
+import Footer from '@/components/Footer'
+import Head from 'next/head'
 
 export const getServerSideProps = async ({ params }: any) => {
     const page = await getPageBySlug(params.slug)
@@ -18,14 +16,24 @@ export const getServerSideProps = async ({ params }: any) => {
 const Page = (props: any) => {
     const { page, navigationItems } = props
     let data = page[0]
-    let acf = data.acf
-    let modules = acf.modules
-    // console.log('acf', modules)
-    // console.log('navigation items ', navigationItems)
+    let acf = data?.acf
+    let modules = acf?.modules
+    let yoast = data?.yoast_head_json
+
+    if (!acf) {
+        return 'no page found'
+    }
+
     return (
         <RootLayout>
+            <Head>
+                <title>{yoast.title}</title>
+                <meta name="title" content={yoast.title} />
+                <meta name="description" content={yoast.description} />
+            </Head>
             <Navigation navigationItems={navigationItems} />
             {renderModules(modules)}
+            <Footer />
         </RootLayout>
     )
 }

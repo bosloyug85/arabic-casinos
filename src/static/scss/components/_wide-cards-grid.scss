@@ -1,0 +1,7 @@
+.wide-cards-grid {
+    padding-bottom: rem(80);
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(42);
+    }
+}

@@ -1,0 +1,145 @@
+.tips-for-beginners {
+    padding-bottom: rem(80);
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(42);
+    }
+
+    &__wrapper {
+        padding: rem(80);
+        border-radius: rem(24);
+        background-color: $black-secondary;
+        border: 2px solid #2d323b;
+
+        @include media-breakpoint-down(md) {
+            padding: rem(16);
+        }
+    }
+
+    .h4 {
+        text-align: center;
+        padding-bottom: rem(40);
+        @include media-breakpoint-down(md) {
+            padding-bottom: rem(20);
+        }
+    }
+    &__cards {
+        gap: 0 rem(20);
+        padding-bottom: rem(50);
+
+        @include media-breakpoint-down(sm) {
+            gap: rem(20) 0;
+            flex-direction: column;
+            padding-bottom: rem(20);
+        }
+        .card-criteria {
+            @include media-breakpoint-down(md) {
+                width: 50%;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 100% !important;
+            }
+        }
+    }
+    &__description {
+        padding: rem(80) 0 rem(120) 0;
+
+        @include media-breakpoint-down(md) {
+            padding: rem(40) 0 rem(60) 0;
+        }
+
+        .h2 {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            text-align: center;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #7d714d;
+            }
+
+            span {
+                padding-right: rem(24);
+                background-color: $black-secondary;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+
+    &__item {
+        padding: rem(40) rem(88);
+        border-radius: rem(24);
+        background-color: $black-secondary;
+        border: 2px solid $primary-color;
+
+        @include media-breakpoint-down(md) {
+            padding: rem(40);
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(16);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(40);
+
+            @include media-breakpoint-down(sm) {
+                margin-bottom: rem(24);
+            }
+        }
+
+        &:nth-child(even) {
+            border: 2px solid #2d323b;
+            background: #272c33;
+
+            .h3 {
+                span {
+                    background-color: #272c33;
+                }
+            }
+        }
+    }
+
+    &__item-content {
+        .h3 {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-bottom: rem(40);
+
+            @include media-breakpoint-down(sm) {
+                padding-bottom: rem(24);
+            }
+
+            @include media-breakpoint-down(xs) {
+                padding-bottom: rem(20);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #7d714d;
+            }
+
+            span {
+                padding-right: rem(24);
+                background-color: $black-secondary;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.acc-block {
+    &__wrapper {
+        padding: rem(80);
+        border-radius: rem(24);
+        border: 2px solid #2d323b;
+        background: #1d2126;
+        overflow: hidden;
+    }
+
+    .general-left-title {
+        padding-bottom: rem(80);
+
+        .container {
+            padding: 0;
+        }
+
+        .h2 {
+            span {
+                background-color: #1d2126;
+            }
+        }
+    }
+
+    &__items {
+        padding-top: rem(40);
+        display: flex;
+        flex-direction: column;
+        gap: rem(40) 0;
+    }
+
+    &__item {
+        padding: rem(40) rem(88);
+        border-radius: 24px;
+        border: 2px solid #2d323b;
+        background: #272c33;
+
+        &:nth-child(even) {
+            border-color: #e2cd8b;
+            background: #1d2126;
+        }
+    }
+}

@@ -1,0 +1,169 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    white-space: nowrap;
+    font-size: rem(18);
+    line-height: line-height(18, 27);
+    font-weight: 700;
+    font-family: $black-font;
+    height: rem(59);
+    padding: rem(16) rem(24);
+    border-radius: rem(12);
+    overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+        padding: rem(16);
+        height: rem(45);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        border-radius: inherit;
+        transition: $t-hover;
+        will-change: transform;
+        border: 2px solid var(--btn-color, $black);
+        background-color: var(--btn-color, $black);
+    }
+
+    &__text {
+        color: var(--text-color, $btn-color);
+        display: inline-flex;
+        line-height: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        align-items: center;
+        transition: $t-hover;
+        z-index: 1;
+
+        > span {
+            padding: 0 rem(2) 0 rem(10);
+        }
+
+        @include media-breakpoint-down(lg) {
+            font-size: rem(16);
+        }
+    }
+
+    &__icon {
+        display: none;
+        position: relative;
+        transition: transform $t-basic;
+        z-index: 1;
+        margin-right: 1.5em;
+        will-change: transform;
+        transform: translateZ(0);
+        z-index: 1;
+
+        svg {
+            width: 1.875em;
+            height: 1em;
+            transform: translateZ(0);
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:active {
+        &:after {
+            transform: scale(0.95);
+        }
+    }
+}
+
+// BTN TYPES
+.btn {
+    &--icon {
+        height: auto;
+
+        .btn__icon {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &--outline {
+        &:after {
+            background-color: transparent;
+            border-color: #e2cd8b;
+        }
+
+        .btn__text {
+            --text-color: #{$white};
+        }
+
+        @include hover() {
+            &:after {
+                background-color: transparent;
+            }
+
+            .btn__text {
+                --text-color: #{$white};
+            }
+        }
+    }
+}
+
+// BTN COLORS
+.btn {
+    // Primary color
+    &--primary {
+        // solid type
+        &.btn--solid {
+            &:after {
+                --btn-color: #{$primary-color};
+            }
+
+            @include hover() {
+                &:after {
+                    --btn-color: #{#a19263};
+                }
+            }
+        }
+
+        // outline type
+        &.btn--outline {
+            &:after {
+                --btn-color: #{$primary-color};
+            }
+
+            .btn__text {
+                --text-color: #{$primary-color};
+            }
+
+            @include hover() {
+                .btn__text {
+                    --text-color: #{$white};
+                }
+            }
+        }
+    }
+    &--yellow {
+        height: rem(75);
+        &:after {
+            --btn-color: #{#db9200};
+        }
+        .btn__text {
+            --text-color: #{$white};
+        }
+        @include hover() {
+            &:after {
+                --btn-color: #{#a19263};
+            }
+        }
+    }
+}

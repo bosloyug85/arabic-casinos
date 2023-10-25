@@ -1,12 +1,10 @@
-@import '../utility.scss';
-
 .hero {
     position: relative;
-    height: calc(100vh - 20px);
+    height: calc(100vh - var(--header-height));
 
     &__bg {
         position: absolute;
-        top: calc(20px * -1);
+        top: calc(var(--header-height) * -1);
         left: 0;
         width: 100%;
         height: 100%;
@@ -21,6 +19,10 @@
 
     &__content {
         max-width: rem(1110);
+
+        @include media-breakpoint-down(xs) {
+            padding-bottom: rem(40);
+        }
 
         p {
             padding-top: rem(16);

@@ -1,0 +1,69 @@
+.display-block {
+    position: relative;
+    padding: rem(80) 0 rem(40);
+    overflow-x: hidden;
+    @include media-breakpoint-down(md) {
+        padding: rem(40) 0 rem(20);
+    }
+    &__inner {
+        margin-right: rem(-50);
+        @include media-breakpoint-down(xs) {
+            margin-right: 0;
+        }
+    }
+    &__wrapper {
+        padding: rem(40) 0 rem(60) rem(40);
+        background: #1d2126;
+        border: rem(2) solid #2d323b;
+        border-radius: rem(24);
+        overflow-x: hidden;
+        @include media-breakpoint-down(md) {
+            padding: rem(20) 0 rem(40) rem(20);
+            border-radius: rem(12);
+        }
+        @include media-breakpoint-down(xs) {
+            padding: rem(10) rem(20) rem(10) rem(20);
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+    .card-criteria {
+        width: auto;
+    }
+    .btn {
+        width: 100%;
+    }
+    .splide {
+        &__arrows {
+            position: absolute;
+            right: 5%;
+            top: -35%;
+            gap: 0 rem(12);
+            @include media-breakpoint-down(xsm) {
+                top: -32%;
+            }
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+        &__pagination {
+            @include media-breakpoint-down(xs) {
+                gap: 0 rem(5);
+            }
+        }
+        .splide__pagination__page {
+            background-color: #616e80;
+            width: rem(10);
+            height: rem(10);
+            flex: 0 0 rem(10);
+            border-radius: 50%;
+
+            &.is-active {
+                background-color: #272c33;
+            }
+        }
+    }
+}

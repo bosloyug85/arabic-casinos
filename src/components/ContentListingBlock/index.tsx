@@ -1,4 +1,5 @@
 import ImageComponent from '../Image'
+// import '../../static/scss/components/_content-listing-block.scss'
 
 const ContentListingBlock = ({ items }: any) => {
     return (
@@ -7,49 +8,26 @@ const ContentListingBlock = ({ items }: any) => {
                 {items &&
                     items.map((item: any, index: number) => (
                         <div className="content-listing-block__item u-d-flex u-align-center">
-                            {++index % 2 === 1 ? (
-                                <>
-                                    <div
-                                        className="left"
-                                        dangerouslySetInnerHTML={{
-                                            __html: item.text,
-                                        }}
-                                    ></div>
+                            <>
+                                <div
+                                    className="left"
+                                    dangerouslySetInnerHTML={{
+                                        __html: item.text,
+                                    }}
+                                ></div>
 
-                                    <div className="right">
-                                        <div className="image-wrapper">
-                                            <ImageComponent
-                                                lazy={true}
-                                                img_url={item.image}
-                                                mobile_img_url={item.image}
-                                                desktop_img_url={item.image}
-                                                className=""
-                                            />
-                                        </div>
+                                <div className="right">
+                                    <div className="image-wrapper">
+                                        <ImageComponent
+                                            lazy={true}
+                                            img_url={item.image}
+                                            mobile_img_url={item.image}
+                                            desktop_img_url={item.image}
+                                            className=""
+                                        />
                                     </div>
-                                </>
-                            ) : (
-                                <>
-                                    <div className="left">
-                                        <div className="image-wrapper">
-                                            <ImageComponent
-                                                lazy={true}
-                                                img_url={item.image}
-                                                mobile_img_url={item.image}
-                                                desktop_img_url={item.image}
-                                                className=""
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        className="right"
-                                        dangerouslySetInnerHTML={{
-                                            __html: item.text,
-                                        }}
-                                    ></div>
-                                </>
-                            )}
+                                </div>
+                            </>
                         </div>
                     ))}
             </div>

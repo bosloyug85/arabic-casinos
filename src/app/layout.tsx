@@ -1,4 +1,4 @@
-import '../static/scss/main.scss'
+// import '../static/scss/main.scss'
 import React from 'react'
 import { Plus_Jakarta_Sans, Kanit } from 'next/font/google'
 

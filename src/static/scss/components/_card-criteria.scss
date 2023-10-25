@@ -1,0 +1,50 @@
+.card-criteria {
+    background-color: $black-light;
+    border-radius: rem(24);
+    width: 32%;
+
+    @include media-breakpoint-down(md) {
+        width: 45%;
+        border-radius: rem(12);
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    &__image {
+        max-width: rem(130);
+    }
+
+    .media-wrapper {
+        padding-bottom: 100%;
+        border-radius: 8px;
+    }
+    &__cta {
+        padding-top: rem(24);
+    }
+    &__card-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: rem(24);
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(22);
+        }
+    }
+
+    &__card-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-top: rem(24);
+
+        .h4 {
+            text-align: left;
+            text-transform: uppercase;
+            padding-bottom: rem(8);
+        }
+    }
+}

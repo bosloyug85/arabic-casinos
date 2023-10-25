@@ -1,27 +1,41 @@
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 .h1,
 .h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-    line-height: 1.25;
+.h3 {
+    line-height: 1.2;
     color: $headline-color;
     font-family: $headline-font;
 
     @include media-breakpoint-up(md) {
-        line-height: 1.1;
+        line-height: 1.2;
+    }
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+    line-height: 1.2;
+    color: $headline-color;
+    font-family: $headling-medium-font;
+
+    @include media-breakpoint-up(md) {
+        line-height: 1.2;
     }
 }
 
 p {
     font-size: rem(16);
-    line-height: 1.4;
+    line-height: line-height(16, 24);
+
+    @include media-breakpoint-up(xl) {
+        font-size: rem(18);
+        line-height: line-height(18, 27);
+    }
 
     a {
         display: inline;
@@ -33,13 +47,16 @@ h1,
     &,
     & * {
         font-size: rem(32);
+        line-height: line-height(32, 32);
 
         @include media-breakpoint-up(md) {
-            font-size: rem(48);
+            font-size: rem(69);
+            line-height: line-height(69, 80);
         }
 
         @include media-breakpoint-up(xl) {
-            font-size: rem(72);
+            font-size: rem(69);
+            line-height: line-height(69, 80);
         }
     }
 }
@@ -48,15 +65,18 @@ h2,
 .h2 {
     &,
     & * {
-        font-size: rem(26);
+        font-size: rem(35);
+        line-height: line-height(35, 35);
 
-        // @include media-breakpoint-up(md) {
-        //     font-size: rem(42);
-        // }
+        @include media-breakpoint-up(md) {
+            font-size: rem(44);
+            line-height: line-height(44, 53);
+        }
 
-        // @include media-breakpoint-up(xl) {
-        //     font-size: rem(64);
-        // }
+        @include media-breakpoint-up(xl) {
+            font-size: rem(44);
+            line-height: line-height(44, 53);
+        }
     }
 }
 
@@ -65,13 +85,16 @@ h3,
     &,
     & * {
         font-size: rem(24);
+        line-height: 1.24;
 
         @include media-breakpoint-up(md) {
-            font-size: rem(28);
+            font-size: rem(35);
+            line-height: 1.24;
         }
 
         @include media-breakpoint-up(xl) {
-            font-size: rem(56);
+            font-size: rem(35);
+            line-height: 1.24;
         }
     }
 }
@@ -80,14 +103,17 @@ h4,
 .h4 {
     &,
     & * {
-        font-size: rem(21);
+        font-size: rem(20);
+        line-height: line-height(20, 24);
 
         @include media-breakpoint-up(md) {
-            font-size: rem(24);
+            font-size: rem(23);
+            line-height: line-height(23, 28);
         }
 
         @include media-breakpoint-up(xl) {
-            font-size: rem(28);
+            font-size: rem(23);
+            line-height: line-height(23, 28);
         }
     }
 }
@@ -96,7 +122,7 @@ h5,
 .h5 {
     &,
     & * {
-        font-size: rem(17);
+        font-size: rem(19);
 
         @include media-breakpoint-up(md) {
             font-size: rem(19);
@@ -108,7 +134,7 @@ h6,
 .h6 {
     &,
     & * {
-        font-size: rem(15);
+        font-size: rem(17);
 
         @include media-breakpoint-up(md) {
             font-size: rem(17);
@@ -125,15 +151,13 @@ h6,
     line-height: 1.25;
     color: $headline-color;
     font-family: $headline-font;
-    font-weight: 600;
 }
 
 .display {
     &-1 {
         &,
         & * {
-            font-size: rem(67);
-            line-height: line-height(67, 80.4);
+            font-size: rem(80);
         }
     }
 

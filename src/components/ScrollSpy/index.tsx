@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../static/scss/components/scroll-spy.scss'
+// import '../../static/scss/components/scroll-spy.scss'
 
 // type HeroProps = {
 //     children?: JSX.Element[]
