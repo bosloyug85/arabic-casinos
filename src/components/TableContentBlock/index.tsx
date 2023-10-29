@@ -32,8 +32,8 @@ const TableContentBlock = ({
                                 <tbody>
                                     {table_rows.map((row: any) => (
                                         <tr>
-                                            <td>{row.item_left}</td>
-                                            <td>{row.item_right}</td>
+                                            <td>{row.left_col}</td>
+                                            <td>{row.right_col}</td>
                                         </tr>
                                     ))}
                                 </tbody>

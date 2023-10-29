@@ -1,7 +1,11 @@
+import { useEffect, useState } from 'react'
 import logo from '../../static/images/arabic-casino.png'
+import { usePathname } from 'next/navigation'
 
 const Navigation = (props: any) => {
     const { navigationItems } = props
+    const pathName = usePathname()
+
     let items = navigationItems.pages
 
     const renderDropdownItems = (parentID: any) => {
@@ -11,7 +15,7 @@ const Navigation = (props: any) => {
             )
             .map((item: any) => (
                 <li key={item.object_id}>
-                    <a href={'/' + item.url}>{item.title}</a>
+                    <a href={'/' + item.slug}>{item.title}</a>
                     {renderDropdownItems(item.object_id)}
                 </li>
             ))
@@ -49,7 +53,11 @@ const Navigation = (props: any) => {
                                 >
                                     <a
                                         href={'/' + item.slug}
-                                        className="nav-menu__link-item u-uppercase line-link line-link--grow is-active"
+                                        className={`nav-menu__link-item u-uppercase line-link line-link--grow ${
+                                            pathName?.indexOf(item.slug) !== -1
+                                                ? 'is-active'
+                                                : ''
+                                        }`}
                                     >
                                         {item.title}
                                     </a>

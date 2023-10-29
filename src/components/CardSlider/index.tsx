@@ -49,38 +49,46 @@ const CardSlider = ({ title, description, items }: any) => {
     }, [])
 
     return (
-        <section className="card-slider">
-            <div className="container">
-                {/* <LeftTitle title={title} description={description} /> */}
-                <div className="card-slider__inner">
-                    <div className="splide js-card-slider">
-                        <div className="splide__track">
-                            <ul className="splide__list">
-                                {items &&
-                                    items.map((item: any, index: number) => (
-                                        <li
-                                            key={index}
-                                            className="splide__slide"
-                                        >
-                                            <CardCriteria item={item} />
-                                        </li>
-                                    ))}
-                            </ul>
-                        </div>
-                        <div className="splide__arrows u-d-flex">
-                            <button
-                                dangerouslySetInnerHTML={{ __html: arrowLeft }}
-                                className="splide__arrow splide__arrow--prev"
-                            ></button>
-                            <button
-                                dangerouslySetInnerHTML={{ __html: arrowRight }}
-                                className="splide__arrow splide__arrow--next"
-                            ></button>
+        <>
+            <LeftTitle title={title} description={description} />
+            <section className="card-slider">
+                <div className="container">
+                    <div className="card-slider__inner">
+                        <div className="splide js-card-slider">
+                            <div className="splide__track">
+                                <ul className="splide__list">
+                                    {items &&
+                                        items.map(
+                                            (item: any, index: number) => (
+                                                <li
+                                                    key={index}
+                                                    className="splide__slide"
+                                                >
+                                                    <CardCriteria item={item} />
+                                                </li>
+                                            )
+                                        )}
+                                </ul>
+                            </div>
+                            <div className="splide__arrows u-d-flex">
+                                <button
+                                    dangerouslySetInnerHTML={{
+                                        __html: arrowLeft,
+                                    }}
+                                    className="splide__arrow splide__arrow--prev"
+                                ></button>
+                                <button
+                                    dangerouslySetInnerHTML={{
+                                        __html: arrowRight,
+                                    }}
+                                    className="splide__arrow splide__arrow--next"
+                                ></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 

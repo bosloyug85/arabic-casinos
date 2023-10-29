@@ -1,11 +1,23 @@
 import React from 'react'
-import star from '../../static/vectors/star.svg'
 import Button from '../Button'
 import StarVector from '../StarVector'
 
-const Partner = (props: any) => {
-    const { imgSrc, title, bonus, buttonText } = props
-    let stars = [1, 2, 3, 4, 5]
+const Partner = ({
+    imgSrc,
+    title,
+    bonus,
+    leftButton,
+    rightButton,
+    stars,
+}: any) => {
+    const createArrayFromNumber = (number: number) => {
+        if (number <= 0) {
+            return []
+        }
+
+        return Array.from({ length: number }, (_, i) => i + 1)
+    }
+
     return (
         <div className="partners u-d-flex u-align-center">
             <div className="partners__image">
@@ -16,20 +28,20 @@ const Partner = (props: any) => {
                 <small>{bonus}</small>
             </div>
             <div className="partners__rating">
-                {stars.map((item: any) => (
+                {createArrayFromNumber(stars).map((item: any) => (
                     <StarVector />
                 ))}
             </div>
             <div className="partners__cta u-d-flex">
                 <Button
                     className="btn btn--outline btn--primary"
-                    btnText="Read Review"
-                    href="#"
+                    btnText={leftButton.title}
+                    href={leftButton.url}
                 />
                 <Button
                     className="btn--solid btn--primary"
-                    btnText={buttonText}
-                    href="#"
+                    btnText={rightButton.title}
+                    href={rightButton.url}
                 />
             </div>
         </div>

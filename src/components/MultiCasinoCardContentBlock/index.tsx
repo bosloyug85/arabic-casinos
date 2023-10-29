@@ -49,10 +49,10 @@ const MultiCasinoCardContentBlock = ({
                             <h2 className="h2">{title}</h2>
                             <div
                                 dangerouslySetInnerHTML={{
-                                    __html: top_content,
+                                    __html: small_title,
                                 }}
                             ></div>
-                            <h4 className="h4">{small_title}</h4>
+                            <h4 className="h4">{top_content}</h4>
                             <ul>
                                 {bottom_list.map((item: any) => (
                                     <li>{item.item}</li>

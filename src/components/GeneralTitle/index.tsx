@@ -1,25 +1,40 @@
 import React from 'react'
 
-// type HeroProps = {
-//     children?: JSX.Element[]
-//     title: string
-//     content: string | JSX.Element
-//     btnHref?: string
-//     btnText?: string
-//     bgImage?: string
-// }
-
-const GeneralTitle = (props: any) => {
-    const { title, description } = props
+const GeneralTitle = ({ title, description, leftAlign }: any) => {
     return (
-        <section className="general-title u-text-center">
-            <div className="container">
-                <h2 className="h2">
-                    <span>{title}</span>
-                </h2>
-                {description && <p>{description}</p>}
-            </div>
-        </section>
+        <>
+            {leftAlign ? (
+                <div className="left-title">
+                    <div className="container">
+                        <h2 className="h2">
+                            <span>{title}</span>
+                        </h2>
+                        {description && (
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: description,
+                                }}
+                            ></div>
+                        )}
+                    </div>
+                </div>
+            ) : (
+                <section className="general-title u-text-center">
+                    <div className="container">
+                        <h2 className="h2">
+                            <span>{title}</span>
+                        </h2>
+                        {description && (
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: description,
+                                }}
+                            ></div>
+                        )}
+                    </div>
+                </section>
+            )}
+        </>
     )
 }
 

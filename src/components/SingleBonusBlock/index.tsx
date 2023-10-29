@@ -15,8 +15,8 @@ const SingleBonusBlock = ({
                 <div className="single-bonus-block__text">
                     {items.map((item: any) => (
                         <div className="single-bonus-block__text-item">
-                            <h6>{item.left_title}</h6>
-                            <p>{item.right_text}</p>
+                            <h6>{item.title}</h6>
+                            <p>{item.content}</p>
                         </div>
                     ))}
                 </div>

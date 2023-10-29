@@ -1,16 +1,28 @@
 import React from 'react'
-// import '../../static/scss/components/scroll-spy.scss'
 
 type SimpleContentBlockProps = {
     title: string
     content: string | JSX.Element
+    highlight?: boolean
 }
 
-const SimpleContentBlock = ({ title, content }: SimpleContentBlockProps) => {
+const SimpleContentBlock = ({
+    title,
+    content,
+    highlight,
+}: SimpleContentBlockProps) => {
     return (
-        <section className="simple-content-block">
+        <section
+            className={`simple-content-block ${
+                highlight ? 'vip-loyality-contrast' : ''
+            }`}
+        >
             <div className="container">
-                <div className="simple-content-block__inner">
+                <div
+                    className={`simple-content-block__inner ${
+                        highlight ? 'vip-loyality-contrast__inner' : ''
+                    }`}
+                >
                     <h2 className="h2">
                         <span>{title}</span>
                     </h2>

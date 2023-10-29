@@ -19,7 +19,7 @@ const Author = (props: any) => {
                     <div className="left">
                         <div className="image-wrapper">
                             <ImageComponent
-                                img_url={image}
+                                img_url={image.url}
                                 lazy={true}
                                 className=""
                             />
@@ -27,7 +27,9 @@ const Author = (props: any) => {
                     </div>
                     <div className="right">
                         <h2 className="h3">{title}</h2>
-                        <p>{description}</p>
+                        <div
+                            dangerouslySetInnerHTML={{ __html: description }}
+                        ></div>
                     </div>
                 </div>
             </div>

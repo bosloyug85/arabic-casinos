@@ -8,6 +8,7 @@
     z-index: 3;
     transition: $t-hover;
     will-change: transform;
+    background-color: transparent;
 
     &.scroll-start {
         background-color: $bg-color;

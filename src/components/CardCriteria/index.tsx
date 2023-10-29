@@ -10,22 +10,17 @@ const CardCriteria = ({ item }: any) => {
                         <ImageComponent
                             className=""
                             lazy={true}
-                            desktop_img_url={item.image}
-                            mobile_img_url={item.image}
-                            img_url={item.image}
+                            desktop_img_url={item.image.url}
+                            mobile_img_url={item.image.url}
+                            img_url={item.image.url}
                         />
                     </div>
                 </div>
                 <div className="card-criteria__card-text">
-                    <h4 className="h4">Rating Criteria</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis ultrices posuere felis, eu efficitur eros dapibus
-                        a. Nunc rutrum fringilla metus, id aliquam neque
-                        dignissim sit amet. Suspendisse tincidunt, mauris in
-                        volutpat commodo, nulla tellus congue tortor, vel tempus
-                        libero justo in justo.
-                    </p>
+                    <h4 className="h4">{item.title}</h4>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                    ></div>
                 </div>
                 {/* <?php
         if (isset($btnCta)) {

@@ -11,7 +11,7 @@ const CardCasino = ({ item }: any) => {
                         <ImageComponent
                             className=""
                             lazy={true}
-                            img_url={item.image}
+                            img_url={item.image.url}
                         />
                     </div>
                 </div>
@@ -23,7 +23,7 @@ const CardCasino = ({ item }: any) => {
                             className="btn--solid btn--yellow"
                         />
                     </div>
-                    {item.line_items.map((_: any) => (
+                    {item.bullets.map((_: any) => (
                         <div className="card-casino__card-badge-text u-d-flex">
                             <svg
                                 viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ const CardCasino = ({ item }: any) => {
                                     stroke-linejoin="round"
                                 />
                             </svg>
-                            <p>{_.line_item}</p>
+                            <p>{_.item}</p>
                         </div>
                     ))}
                 </div>

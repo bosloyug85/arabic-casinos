@@ -2,7 +2,6 @@ import React from 'react'
 import SingleBonusBlock from '../SingleBonusBlock'
 
 const CasinoBonusSingle = ({
-    title,
     description,
     banner_items,
     cta_title,
@@ -12,9 +11,6 @@ const CasinoBonusSingle = ({
     return (
         <section className="casino-bonus-single">
             <div className="container">
-                <h2 className="h2">
-                    <span>{title}</span>
-                </h2>
                 <div dangerouslySetInnerHTML={{ __html: description }}></div>
                 <SingleBonusBlock
                     items={banner_items}

@@ -1,5 +1,4 @@
 import React from 'react'
-// import '../../static/scss/components/_payment-method.scss'
 import CardPayment from '../CardPayment'
 
 const PaymentMethod = ({ items }: any) => {

@@ -1,65 +1,86 @@
 .table-content-block {
     overflow: hidden;
     padding: rem(80) 0 rem(80);
+
     @include media-breakpoint-down(md) {
         padding: rem(40) 0 rem(40);
     }
+
     &__inner {
         @include media-breakpoint-down(md) {
             flex-wrap: wrap;
         }
     }
+
     &__left {
+        .h2 {
+            margin-bottom: rem(20);
+        }
+
         width: 42%;
         margin-right: rem(80);
+
         @include media-breakpoint-down(md) {
             margin: 0 0 rem(24) 0;
             width: 100%;
         }
     }
+
     &__right {
         width: 58%;
+
         @include media-breakpoint-down(md) {
             width: 100%;
         }
+
         @include media-breakpoint-down(xs) {
         }
     }
+
     &__table {
         width: 100%;
         border-radius: rem(24);
         border: rem(2) solid #2d323b;
+
         @include media-breakpoint-down(md) {
             overflow-x: scroll;
             border-radius: rem(12);
         }
+
         @include media-breakpoint-down(xs) {
             max-width: rem(665);
         }
+
         table {
             border-collapse: collapse;
             border-radius: rem(24);
             overflow: hidden;
             width: 100%;
+
             @include media-breakpoint-down(md) {
                 border-radius: rem(12);
             }
         }
+
         tr {
             transition: $t-hover;
+
             @include hover() {
                 background: #272c33;
             }
         }
+
         th {
             background: #272c33;
             padding: rem(42) rem(24);
             border-bottom: rem(2) solid #2d323b;
             width: calc(100% / 3);
+
             @include media-breakpoint-down(md) {
                 padding: rem(20) rem(12);
                 white-space: nowrap;
             }
+
             &:not(:last-child) {
                 border-right: 2px solid #2d323b;
             }
@@ -69,18 +90,22 @@
             padding: rem(16) rem(24);
             font-size: rem(18);
             width: calc(100% / 3);
+
             @include media-breakpoint-down(md) {
                 font-size: rem(16);
             }
         }
+
         .h4 {
             font-weight: 500;
         }
+
         tbody {
             tr {
                 &:not(:last-child) {
                     border-bottom: rem(2) solid #2d323b;
                 }
+
                 td {
                     &:not(:last-child) {
                         border-right: 2px solid #2d323b;

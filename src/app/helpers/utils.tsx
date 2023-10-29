@@ -28,24 +28,26 @@ import CasinoBonusSingle from '@/components/CasinoBonusSingle'
 import TypeTableBlock from '@/components/TypeTableBlock'
 import TableSimple from '@/components/TableSimple'
 import WhyContentBlock from '@/components/WhyContentBlock'
+import TableBlock from '@/components/TableBlock'
 
 export const renderModules = (modules: any) => {
     if (modules) {
         return modules.map((module: any, index: number) =>
-            module['acf_fc_layout'] === 'hero' ? (
+            module['acf_fc_layout'] === 'atf_blocks_–_atf_element' ? (
                 <Hero
                     key={index}
                     title={module['title']}
-                    content={module['description']}
-                    bgImage={module['image']}
-                    btnText={module['button']['title']}
-                    btnHref={module['button']['url']}
+                    content={module['content']}
+                    bgImage={module['background_image']}
+                    btnText={module['link']['title']}
+                    btnHref={module['link']['url']}
                 />
-            ) : module['acf_fc_layout'] === 'general_title' ? (
+            ) : module['acf_fc_layout'] === 'h2_-_block_with_description' ? (
                 <GeneralTitle
                     key={index}
                     title={module['title']}
                     description={module['description']}
+                    leftAlign={module['left_align']}
                 />
             ) : module['acf_fc_layout'] === 'left_title' ? (
                 <LeftTitle
@@ -53,42 +55,39 @@ export const renderModules = (modules: any) => {
                     title={module['title']}
                     description={module['description']}
                 />
-            ) : module['acf_fc_layout'] === 'reviews' ? (
-                <PartnersList
-                    key={index}
-                    title={module['title']}
-                    listItems={module['review']}
-                />
-            ) : module['acf_fc_layout'] === 'sticky_nav' ? (
-                <ScrollSpy key={index} items={module['sticky_nav']} />
-            ) : module['acf_fc_layout'] === 'who_is_module' ? (
+            ) : module['acf_fc_layout'] === 'partner_listing_version_1' ? (
+                <PartnersList key={index} listItems={module['items']} />
+            ) : module['acf_fc_layout'] === 'jumplink_element' ? (
+                <ScrollSpy key={index} items={module['items']} />
+            ) : module['acf_fc_layout'] === 'fact_box_content_block' ? (
                 <BoxContentBlock
                     key={index}
-                    content={module['left_text']}
-                    title={module['right_text']}
+                    content={module['fact']}
+                    title={module['quote']}
                 />
-            ) : module['acf_fc_layout'] === 'how_we_rate' ? (
-                <ContentListingBlock key={index} items={module['repeater']} />
-            ) : module['acf_fc_layout'] === 'card_slider' ? (
+            ) : module['acf_fc_layout'] === 'content_listing_block' ? (
+                <ContentListingBlock
+                    key={index}
+                    reverse={module['reverse_every_second_element']}
+                    items={module['items']}
+                    disable_cta={module['disable_cta']}
+                />
+            ) : module['acf_fc_layout'] === 'display_block' ? (
                 <CardSlider
                     key={index}
                     title={module['title']}
                     description={module['description']}
-                    items={module['slider']}
+                    items={module['items']}
                 />
-            ) : module['acf_fc_layout'] === 'small_cards_grid' ? (
-                <SmallCardsGrid
-                    key={index}
-                    title={module['title']}
-                    description={module['description']}
-                    items={module['cards']}
-                />
-            ) : module['acf_fc_layout'] === 'tips_for_beginners' ? (
+            ) : module['acf_fc_layout'] === 'content_tiles' ? (
+                <SmallCardsGrid key={index} items={module['items']} />
+            ) : module['acf_fc_layout'] ===
+              'alternating_coloured_content_block' ? (
                 <TipsForBeginners
                     key={index}
                     title={module['title']}
                     description={module['description']}
-                    tips={module['tips']}
+                    tips={module['items']}
                 />
             ) : module['acf_fc_layout'] === 'wide_cards_grid' ? (
                 <WideCardsGrid
@@ -97,33 +96,30 @@ export const renderModules = (modules: any) => {
                     description={module['description']}
                     cards={module['cards']}
                 />
-            ) : module['acf_fc_layout'] === 'payment_methods' ? (
-                <PaymentMethod
-                    key={index}
-                    title={module['title']}
-                    description={module['description']}
-                    items={module['items']}
-                />
-            ) : module['acf_fc_layout'] === 'faq_block' ? (
+            ) : module['acf_fc_layout'] ===
+              'multiple_content_comparison_block' ? (
+                <PaymentMethod key={index} items={module['items']} />
+            ) : module['acf_fc_layout'] === 'faq_content_block' ? (
                 <FaqBlock
                     key={index}
                     title={module['title']}
-                    faqs={module['faqs']}
+                    faqs={module['items']}
                 />
-            ) : module['acf_fc_layout'] === 'author' ? (
+            ) : module['acf_fc_layout'] === 'author_block' ? (
                 <Author
                     key={index}
                     title={module['title']}
                     image={module['image']}
-                    description={module['description']}
+                    description={module['content']}
                 />
             ) : module['acf_fc_layout'] === 'casino_bonus_listing' ? (
                 <CasinoBonusListing key={index} items={module['items']} />
-            ) : module['acf_fc_layout'] === 'simple_content_block' ? (
+            ) : module['acf_fc_layout'] === 'basic_content_block' ? (
                 <SimpleContentBlock
                     key={index}
                     title={module['title']}
-                    content={module['content']}
+                    content={module['text']}
+                    highlight={module['highlight']}
                 />
             ) : module['acf_fc_layout'] === 'basic_cards_block' ? (
                 <BasicCardsBlock key={index} cards={module['cards']} />
@@ -134,46 +130,44 @@ export const renderModules = (modules: any) => {
                     text={module['text']}
                     image={module['image']}
                 />
-            ) : module['acf_fc_layout'] === 'simple_content_double' ? (
+            ) : module['acf_fc_layout'] ===
+              'content_block_with_image_and_background' ? (
                 <SimpleContentDouble
                     key={index}
-                    top_title={module['top_banner_-_title']}
-                    top_content={module['top_banner_-_text']}
-                    bottom_title={module['bottom_banner_-_title']}
-                    bottom_content={module['bottom_banner_-_text']}
-                    bottom_image={module['bottom_banner_-_image']}
+                    top_title={module['top_title']}
+                    top_content={module['top_content']}
+                    bottom_title={module['bottom_title']}
+                    bottom_content={module['bottom_content']}
+                    bottom_image={module['bottom_image']}
                 />
             ) : module['acf_fc_layout'] ===
-              'multi_casino_card_content_block' ? (
+              'single_casino_card_content_block' ? (
                 <MultiCasinoCardContentBlock
                     key={index}
                     title={module['title']}
-                    small_title={module['small_title']}
-                    top_content={module['top_content']}
-                    bottom_list={module['bottom_list']}
-                    items={module['items']}
+                    small_title={module['short_description']}
+                    top_content={module['list_title']}
+                    bottom_list={module['list_items']}
+                    items={module['cards']}
                 />
             ) : module['acf_fc_layout'] === 'table_content_block' ? (
                 <TableContentBlock
                     key={index}
                     title={module['title']}
                     content={module['content']}
-                    table_left_col_title={module['table_left_col_title']}
-                    table_right_col_title={module['table_right_col_title']}
+                    table_left_col_title={module['left_col_title']}
+                    table_right_col_title={module['right_col_title']}
                     table_rows={module['table_rows']}
                 />
-            ) : module['acf_fc_layout'] === 'text_image_cta' ? (
+            ) : module['acf_fc_layout'] === 'mobile_casino_app_block' ? (
                 <TextImageCta key={index} items={module['items']} />
-            ) : module['acf_fc_layout'] === 'comparison_table_content' ? (
+            ) : module['acf_fc_layout'] === 'comparison_table_content_block' ? (
                 <ComparisonTableContent
                     key={index}
                     title={module['title']}
-                    text={module['text']}
-                    list={module['list']}
-                    first_col_title={module['first_col_title']}
-                    second_col_title={module['second_col_title']}
-                    third_col_title={module['third_col_title']}
-                    fourth_col_title={module['fourth_col_title']}
+                    text={module['content']}
+                    list={module['bullets']}
+                    table_head_columns={module['table_head_columns']}
                     table_rows={module['table_rows']}
                 />
             ) : module['acf_fc_layout'] === 'vip_loyalty_contrast' ? (
@@ -182,12 +176,10 @@ export const renderModules = (modules: any) => {
                     title={module['title']}
                     description={module['description']}
                 />
-            ) : module['acf_fc_layout'] === 'casino_bonus_single' ? (
+            ) : module['acf_fc_layout'] === 'single_bonus_listing_block' ? (
                 <CasinoBonusSingle
                     key={index}
-                    title={module['title']}
-                    description={module['description']}
-                    banner_items={module['banner_items']}
+                    banner_items={module['items']}
                     cta_title={module['cta_title']}
                     cta_gold={module['cta_gold']}
                     cta={module['cta']}
@@ -217,7 +209,15 @@ export const renderModules = (modules: any) => {
                 <WhyContentBlock
                     key={index}
                     title={module['title']}
-                    content={module['content']}
+                    content={module['description']}
+                    table_head_columns={module['table_head_columns']}
+                    table_rows={module['table_rows']}
+                />
+            ) : module['acf_fc_layout'] === 'table_block' ? (
+                <TableBlock
+                    key={index}
+                    table_head_columns={module['table_head_columns']}
+                    table_rows={module['table_rows']}
                 />
             ) : null
         )

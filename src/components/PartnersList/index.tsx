@@ -7,13 +7,15 @@ const PartnersList = (props: any) => {
     return (
         <section className="partners-block">
             <div className="container">
-                {listItems.map((item: any, key: any) => (
+                {listItems.map((item: any, index: any) => (
                     <Partner
-                        key={key}
-                        imgSrc={item.logo}
+                        key={index}
+                        imgSrc={item.logo.url}
                         title={item.text}
-                        bonus={item.text_under}
-                        buttonText="Play Now"
+                        bonus={item.small_text}
+                        leftButton={item.left_button}
+                        rightButton={item.right_button}
+                        stars={item.stars}
                     />
                 ))}
             </div>

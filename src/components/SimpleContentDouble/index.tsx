@@ -4,7 +4,7 @@ import ImageComponent from '../Image'
 type SimpleContentDoubleProps = {
     top_title: string
     top_content: string | JSX.Element
-    bottom_image: string
+    bottom_image: any
     bottom_title: string
     bottom_content: string | JSX.Element
 }
@@ -34,7 +34,9 @@ const SimpleContentDouble = ({
                                 <ImageComponent
                                     className=""
                                     lazy={true}
-                                    img_url={bottom_image}
+                                    img_url={bottom_image.url}
+                                    mobile_img_url={bottom_image.url}
+                                    desktop_img_url={bottom_image.url}
                                 />
                             </div>
                             <h2 className="h2">

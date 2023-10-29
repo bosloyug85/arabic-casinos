@@ -11,13 +11,13 @@ const CardPayment = ({ item, className }: any) => {
                         <ImageComponent
                             className=""
                             lazy={true}
-                            img_url={item.image}
+                            img_url={item.image.url}
                         />
                     </div>
                 </div>
                 <div className="card-payments__card-text">
                     <h4 className="h4">{item.title}</h4>
-                    {item.lines.map((line: any) => (
+                    {item.bullet_points.map((line: any) => (
                         <div className="card-payments__card-badge-text u-d-flex">
                             <svg
                                 viewBox="0 0 24 24"
