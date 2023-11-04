@@ -22,13 +22,13 @@ const BigTable = ({ items }: any) => {
             }
         })
         cardNumber.textContent = hiddenImagesCount.toString()
-        showMoreButton.addEventListener('click', function (event: any) {
+        showMoreButton.addEventListener('click', (event: any) => {
             event.preventDefault()
-            let hiddenImages = Array.from(images).filter(function (img) {
+            let hiddenImages = Array.from(images).filter((img: any) => {
                 return img.parentElement.style.display === 'none'
             })
 
-            hiddenImages.slice(0, 10).forEach(function (img) {
+            hiddenImages.slice(0, 10).forEach((img: any) => {
                 img.parentElement.style.display = 'block'
             })
 
