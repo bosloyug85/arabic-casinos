@@ -29,6 +29,8 @@ import TypeTableBlock from '@/components/TypeTableBlock'
 import TableSimple from '@/components/TableSimple'
 import WhyContentBlock from '@/components/WhyContentBlock'
 import TableBlock from '@/components/TableBlock'
+import InfoBlock from '@/components/InfoBlock'
+import ReviewTables from '@/components/ReviewTables'
 
 export const renderModules = (modules: any) => {
     if (modules) {
@@ -218,6 +220,24 @@ export const renderModules = (modules: any) => {
                     key={index}
                     table_head_columns={module['table_head_columns']}
                     table_rows={module['table_rows']}
+                />
+            ) : module['acf_fc_layout'] === 'info_block' ? (
+                <InfoBlock
+                    key={index}
+                    logo={module['logo']}
+                    title={module['title']}
+                    review_title={module['review_-_title']}
+                    description={module['description']}
+                    review_description={module['review_-_description']}
+                    review={module['review']}
+                    button={module['button']}
+                />
+            ) : module['acf_fc_layout'] === 'review_tables_block' ? (
+                <ReviewTables
+                    key={index}
+                    table_head_columns={module['table_head_columns']}
+                    table_rows={module['table_rows']}
+                    big_table={module['big_table']}
                 />
             ) : null
         )
