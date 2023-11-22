@@ -1,48 +1,39 @@
+import '../static/scss/main.scss'
+import { renderModules } from '@/app/helpers/utils'
 import { getNavigationItemsByMenuSlug, getPageBySlug } from '@/app/lib/api'
-import GeneralTitle from '@/components/GeneralTitle'
-import Hero from '@/components/Hero'
+import Footer from '@/components/Footer'
+import Navigation from '@/components/Navigation'
 import RootLayout from '@/components/RootLayout'
-import ScrollSpy from '@/components/ScrollSpy'
+import Head from 'next/head'
 import React from 'react'
 
 export const getServerSideProps = async ({ params }: any) => {
-    // const page = await getPageBySlug(params.slug)
+    const page = await getPageBySlug('home')
     const navigationItems = await getNavigationItemsByMenuSlug('header-menu')
-    return { props: { navigationItems } }
+    return { props: { page, navigationItems } }
 }
 
-const HomePage = () => {
+const HomePage = (props: any) => {
+    const { page, navigationItems } = props
+    let data = page[0]
+    let acf = data?.acf
+    let modules = acf?.modules
+    let yoast = data?.yoast_head_json
+
+    if (!acf) {
+        return 'no page found'
+    }
+
     return (
         <RootLayout>
-            <Hero
-                title="The Best Arabic Casinos Online"
-                content={
-                    <>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Duis ultrices posuere felis, eu efficitur eros
-                            dapibus a. Nunc rutrum fringilla metus, id aliquam
-                            neque dignissim sit amet. Suspendisse tincidunt,
-                            mauris in volutpat commodo, nulla tellus congue
-                            tortor, vel tempus libero justo in justo tincidunt,
-                            mauris in volutpat commodo.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Duis ultrices posuere felis, eu efficitur eros
-                            dapibus a. Nunc rutrum fringilla metus, id aliquam
-                            neque dignissim sit amet. Suspendisse tincidunt,
-                            mauris in volutpat commodo, nulla tellus congue
-                            tortor, vel tempus libero justo in justo tincidunt,
-                            mauris in volutpat commodo.
-                        </p>
-                    </>
-                }
-                btnHref="#"
-                btnText="See Top Online Casinos"
-            />
-            <ScrollSpy />
-            <GeneralTitle title={'Top Online Casinos and Sportsbook'} />
+            <Head>
+                <title>{yoast.title}</title>
+                <meta name="title" content={yoast.title} />
+                <meta name="description" content={yoast.description} />
+            </Head>
+            <Navigation navigationItems={navigationItems} />
+            {renderModules(modules)}
+            <Footer />
         </RootLayout>
     )
 }

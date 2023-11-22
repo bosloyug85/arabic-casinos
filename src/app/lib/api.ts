@@ -11,7 +11,7 @@ export async function getNavigationItemsByMenuSlug(menuSlug: string) {
     //     `${process.env.API_BASE_URL}/wp-json/get-menus/menu/${menuSlug}`
     // )
     const data = await fetch(
-        `https://api-arabic.devcode.biz/wp-json/api/v1/navigation/header`
+        `${process.env.API_BASE_URL}/wp-json/api/v1/navigation/header`
     )
 
     const response = await data.json()
